@@ -22,18 +22,15 @@ import {
   increment,
 } from "firebase/firestore";
 
-// ── Placeholder Firebase config — replace with your actual project values ──
-// 1. Go to https://console.firebase.google.com
-// 2. Create project: perfectly-flawed-families
-// 3. Add a Web app, copy the config object below
+// ── Firebase config — values come from EXPO_PUBLIC_ env vars in .env ──────────
 const firebaseConfig = {
-  apiKey:            "AIzaSyBX4rVQJSuIWN6GL8aaKzmBUq84UF9p6is",
-  authDomain:        "perfectlyflawedfamilies.firebaseapp.com",
-  projectId:         "perfectlyflawedfamilies",
-  storageBucket:     "perfectlyflawedfamilies.firebasestorage.app",
-  messagingSenderId: "46954142156",
-  appId:             "1:46954142156:web:1a6fa0c9c8bc7e1185e569",
-  measurementId:     "G-GCSEJ3DY7Y",
+  apiKey:            process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain:        process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId:         process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket:     process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId:             process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
+  measurementId:     process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 const firebaseApp    = initializeApp(firebaseConfig);
