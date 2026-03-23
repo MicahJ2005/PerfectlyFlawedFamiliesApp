@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Perfectly Flawed Families",
+    "slug": "PerfectlyFlawedFamilies",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/web-app-manifest-192x192.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/web-app-manifest-192x192.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#EDEAE4"
+    },
+    "ios": {
+      "bundleIdentifier": "com.perfectlyflawed.families",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.perfectlyflawed.families",
+      "adaptiveIcon": {
+        "backgroundColor": "#2E7D6B",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/web-app-manifest-192x192.png"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-secure-store",
+      "expo-web-browser"
+    ]
+  }
+}

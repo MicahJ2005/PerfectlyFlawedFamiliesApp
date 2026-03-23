@@ -1,0 +1,22 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "/api/devotion",                "function": "devotion" },
+      { "source": "/api/family-compass",          "function": "familyCompass" },
+      { "source": "/api/create-checkout-session", "function": "createCheckoutSession" },
+      { "source": "/api/create-portal-session",   "function": "createPortalSession" },
+      { "source": "/api/redeem-code",             "function": "redeemCode" },
+      { "source": "/api/stripe-webhook",          "function": "stripeWebhook" },
+      { "source": "**",                           "destination": "/index.html" }
+    ]
+  },
+  "functions": {
+    "source": "functions"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

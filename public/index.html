@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <!-- ── PWA Core ──────────────────────────────────────────────────────── -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#2E7D6B" />
+
+    <!-- ── iOS / Safari PWA ─────────────────────────────────────────────── -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Perfectly Flawed Families" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <!-- Splash screens for common iPhone sizes -->
+    <link rel="apple-touch-startup-image"
+      media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"
+      href="/splash/splash-390x844.png" />
+    <link rel="apple-touch-startup-image"
+      media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+      href="/splash/splash-375x812.png" />
+    <link rel="apple-touch-startup-image"
+      media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+      href="/splash/splash-414x896.png" />
+
+    <!-- ── Android / Chrome ──────────────────────────────────────────────── -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Perfectly Flawed Families" />
+
+    <!-- ── SEO & Share ───────────────────────────────────────────────────── -->
+    <meta name="description" content="Imperfect families, growing together in grace. Faith-grounded family devotions, prayer wall, and family roots." />
+    <meta property="og:title" content="Perfectly Flawed Families" />
+    <meta property="og:description" content="Imperfect families, growing together in grace. Faith-grounded family devotions, prayer wall, and family roots." />
+    <meta property="og:image" content="/icons/icon-512.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- ── Fonts ─────────────────────────────────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+    <title>Perfectly Flawed Families</title>
+
+    <style>
+      /* Prevent flash of unstyled background */
+      html, body, #root {
+        margin: 0; padding: 0;
+        background: #EDEAE4;
+        height: 100%;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Hide scrollbar on iOS */
+      body { overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <noscript>You need JavaScript enabled to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
