@@ -7,7 +7,7 @@ import { SavedDevotionsScreen }       from "./SavedDevotionsScreen";
 import { AppSettingsScreen }          from "./AppSettingsScreen";
 import { PrivatePrayerGroupsScreen }  from "./PrivatePrayerGroupsScreen";
 
-const VAPID_PUBLIC_KEY = "BHoP-HgFhW6tqvR33GTDGUmIyhoG1nC01LC6-yvv0aFGdcc3jCT85nSuBX2xZT1_9CmN30efk2Pr6p7KXlGWrcU";
+const VAPID_PUBLIC_KEY = "BCjfFF0V7hZsBAczvU3pziHSuZF8jMw7pabrkLbCC-VcRPNa4sbSEeHh2luumiAbley7FAfI1d18n3dHYGalELE";
 
 function urlBase64ToUint8Array(base64String) {
   const padding = "=".repeat((4 - base64String.length % 4) % 4);

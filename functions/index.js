@@ -326,10 +326,15 @@ exports.stripeWebhook = onRequest(async (req, res) => {
 
 exports.onNewPublicPrayer = onDocumentCreated("prayerRequests/{prayerId}", async (event) => {
   const prayer = event.data?.data();
+  console.log("[PublicPrayer] triggered, uid:", prayer?.uid, "active:", prayer?.active);
   if (prayer?.active === false) return;
 
   const subsSnap = await db.collection("pushSubscriptions").get();
+  console.log("[PublicPrayer] total subscriptions:", subsSnap.size);
   if (subsSnap.empty) return;
+
+  const targets = subsSnap.docs.filter(doc => doc.id !== prayer.uid);
+  console.log("[PublicPrayer] targets after filtering poster:", targets.length);
 
   const wp = webpush();
   const payload = JSON.stringify({
@@ -337,23 +342,23 @@ exports.onNewPublicPrayer = onDocumentCreated("prayerRequests/{prayerId}", async
     body:  prayer.isAnon
       ? "Someone shared an anonymous prayer request"
       : `${prayer.author} shared a prayer request`,
-    icon:  "/icon-192.png",
-    badge: "/badge.png",
+    icon:  "/icons/icon-192.png",
+    badge: "/icons/icon-96.png",
     url:   "/",
   });
 
-  await Promise.allSettled(
-    subsSnap.docs
-      .filter(doc => doc.id !== prayer.uid)
-      .map(async (doc) => {
-        try {
-          await wp.sendNotification(doc.data().subscription, payload);
-        } catch (err) {
-          // 404/410 means the subscription is expired — remove it
-          if (err.statusCode === 404 || err.statusCode === 410) await doc.ref.delete();
-        }
-      }),
+  const results = await Promise.allSettled(
+    targets.map(async (doc) => {
+      try {
+        await wp.sendNotification(doc.data().subscription, payload);
+        console.log("[PublicPrayer] sent to:", doc.id);
+      } catch (err) {
+        console.error("[PublicPrayer] send failed for", doc.id, "status:", err.statusCode, err.message);
+        if (err.statusCode === 404 || err.statusCode === 410) await doc.ref.delete();
+      }
+    }),
   );
+  console.log("[PublicPrayer] done, results:", results.length);
 });
 
 // ─── 8. Push Notification: New Private Group Prayer ───────────────────────────
@@ -365,12 +370,14 @@ exports.onNewPrivateGroupPrayer = onDocumentCreated(
   async (event) => {
     const prayer = event.data?.data();
     const { groupId } = event.params;
+    console.log("[PrivatePrayer] triggered, groupId:", groupId, "uid:", prayer?.uid, "active:", prayer?.active);
     if (prayer?.active === false) return;
 
     const groupDoc = await db.collection("privateGroups").doc(groupId).get();
-    if (!groupDoc.exists) return;
+    if (!groupDoc.exists) { console.log("[PrivatePrayer] group not found"); return; }
 
     const { members = [], name: groupName } = groupDoc.data();
+    console.log("[PrivatePrayer] group:", groupName, "members:", members.length);
     if (members.length === 0) return;
 
     // Firestore `in` queries are capped at 30 items — batch if needed
@@ -384,6 +391,7 @@ exports.onNewPrivateGroupPrayer = onDocumentCreated(
       subscriptionDocs.push(...snap.docs);
     }
 
+    console.log("[PrivatePrayer] subscriptions found:", subscriptionDocs.length);
     if (subscriptionDocs.length === 0) return;
 
     const wp = webpush();
@@ -392,22 +400,26 @@ exports.onNewPrivateGroupPrayer = onDocumentCreated(
       body:  prayer.isAnon
         ? "Someone shared an anonymous prayer request"
         : `${prayer.author} shared a prayer request`,
-      icon:  "/icon-192.png",
-      badge: "/badge.png",
+      icon:  "/icons/icon-192.png",
+      badge: "/icons/icon-96.png",
       url:   "/",
     });
 
-    await Promise.allSettled(
-      subscriptionDocs
-        .filter(doc => doc.id !== prayer.uid)
-        .map(async (doc) => {
-          try {
-            await wp.sendNotification(doc.data().subscription, payload);
-          } catch (err) {
-            if (err.statusCode === 404 || err.statusCode === 410) await doc.ref.delete();
-          }
-        }),
+    const targets = subscriptionDocs.filter(doc => doc.id !== prayer.uid);
+    console.log("[PrivatePrayer] targets after filtering poster:", targets.length);
+
+    const results = await Promise.allSettled(
+      targets.map(async (doc) => {
+        try {
+          await wp.sendNotification(doc.data().subscription, payload);
+          console.log("[PrivatePrayer] sent to:", doc.id);
+        } catch (err) {
+          console.error("[PrivatePrayer] send failed for", doc.id, "status:", err.statusCode, err.message);
+          if (err.statusCode === 404 || err.statusCode === 410) await doc.ref.delete();
+        }
+      }),
     );
+    console.log("[PrivatePrayer] done, results:", results.length);
   },
 );
 
