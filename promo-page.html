@@ -1,0 +1,989 @@
+<!--
+=======================================================================
+  WORDPRESS SEO SETTINGS (paste these into Yoast SEO / RankMath)
+=======================================================================
+
+  SEO TITLE:
+    Perfectly Flawed Families App — Faith-Based Devotions, Prayer &
+    Guidance for Real Families
+
+  META DESCRIPTION:
+    Perfectly Flawed Families is a free faith-based app with Scripture-
+    grounded family devotions, a community prayer wall, and faith-guided
+    wisdom for your family's toughest moments. Open it in your browser
+    or install it on any device.
+
+  FOCUS KEYPHRASE:
+    faith-based family app
+
+  OPEN GRAPH TITLE:
+    Perfectly Flawed Families — Devotions, Prayer & Guidance
+
+  OPEN GRAPH DESCRIPTION:
+    A free faith-based app with daily family devotions, a community
+    prayer wall, and Scripture-grounded guidance — built for real,
+    imperfect families.
+
+  OPEN GRAPH IMAGE:
+    Upload a 1200×630 branded image of the app to your WordPress
+    media library and set it here. Recommended: teal background,
+    app logo centered, tagline below.
+
+  TWITTER CARD TYPE:  summary_large_image
+
+  CANONICAL URL:
+    https://perfectlyflawedleadership.com/[this-page-slug]/
+
+=======================================================================
+-->
+
+<!-- JSON-LD Structured Data — read by Google from anywhere on the page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MobileApplication",
+      "name": "Perfectly Flawed Families",
+      "url": "https://perfectlyflawedfamilies.web.app",
+      "description": "A free faith-based family app with Scripture-grounded devotions, a community prayer wall, and guided wisdom for your family's toughest moments.",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Family Devotions",
+        "Family Roots faith-based guidance",
+        "Community Prayer Wall",
+        "Private prayer groups",
+        "Real-time push notifications"
+      ],
+      "screenshot": "https://perfectlyflawedfamilies.web.app",
+      "keywords": "faith-based family app, Christian family devotions, family prayer wall, scripture-based parenting, family devotional app, Christian parenting app",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Perfectly Flawed Leadership",
+        "url": "https://perfectlyflawedleadership.com/"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Perfectly Flawed Leadership",
+      "url": "https://perfectlyflawedleadership.com/",
+      "sameAs": [
+        "https://perfectlyflawedfamilies.web.app"
+      ],
+      "description": "Faith-based resources, guidance, and tools for families and leaders.",
+      "foundingDate": "2024"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Perfectly Flawed Families free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Perfectly Flawed Families is completely free. No downloads required — it runs in your browser or can be installed as an app on any device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Family Prayer Wall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Family Prayer Wall is a community feature where you can share prayer requests and pray for other families. You can join topic-based groups like Praying Parents, Couples Circle, Expecting Families, and more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Family Roots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Family Roots is a Scripture-grounded guidance feature. Describe what your family is facing — marriage communication, parenting disagreements, sibling conflict, teenage rebellion — and receive practical wisdom and honest next steps rooted in Scripture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are the family devotions personalized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You select your family's ages (little ones, elementary, teens, or adults only) and choose a perspective (for parents, for your child, together as a family, or for couples). Every devotion is tailored to your household."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  .pff-wrap *, .pff-wrap *::before, .pff-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .pff-wrap {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #F5F2EC;
+    color: #2C2C2C;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .pff-wrap .pff-hero {
+    background: linear-gradient(160deg, #1a5c4e 0%, #2E7D6B 50%, #3A9E88 100%);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 80px 24px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pff-wrap .pff-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='-30 0 160 130' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='50' cy='32' rx='46' ry='26' fill='rgba(255,255,255,0.04)'/%3E%3Ccircle cx='50' cy='8' r='18' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E") center/400px repeat;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .pff-wrap .pff-hero-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.2));
+    display: block;
+  }
+  .pff-wrap .pff-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    line-height: 1.15;
+    color: #FFFFFF;
+  }
+  .pff-wrap .pff-hero .pff-sub {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    opacity: 0.88;
+    max-width: 540px;
+    margin: 0 auto 36px;
+    font-style: italic;
+    color: #FFFFFF;
+  }
+  .pff-wrap .pff-hero-btns {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .pff-wrap .pff-btn-primary {
+    display: inline-block;
+    background: #FFFFFF;
+    color: #2E7D6B !important;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .pff-wrap .pff-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+  .pff-wrap .pff-btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: #FFFFFF !important;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 13px 30px;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.6);
+    text-decoration: none !important;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .pff-wrap .pff-btn-outline:hover { background: rgba(255,255,255,0.12); border-color: #FFFFFF; }
+
+  /* ── VERSE BANNER ── */
+  .pff-wrap .pff-verse-banner {
+    background: #1e1e1e;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .pff-wrap .pff-verse-banner blockquote {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    max-width: 640px;
+    margin: 0 auto 10px;
+    line-height: 1.7;
+    opacity: 0.95;
+    color: #FFFFFF;
+    border: none;
+    padding: 0;
+    background: none;
+  }
+  .pff-wrap .pff-verse-banner cite {
+    font-size: 0.9rem;
+    color: #3A9E88;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SECTIONS ── */
+  .pff-wrap .pff-section { padding: 72px 24px; }
+  .pff-wrap .pff-section-cream { background: #F5F2EC; }
+  .pff-wrap .pff-section-white { background: #FFFFFF; }
+  .pff-wrap .pff-container { max-width: 1080px; margin: 0 auto; }
+  .pff-wrap .pff-label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2E7D6B;
+    margin-bottom: 10px;
+  }
+  .pff-wrap .pff-h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: #2C2C2C;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .pff-wrap .pff-lead {
+    font-size: 1.05rem;
+    color: #6B7280;
+    max-width: 520px;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* ── FEATURES GRID ── */
+  .pff-wrap .pff-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+  .pff-wrap .pff-feature-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 28px 24px;
+    border: 1px solid rgba(46,125,107,0.12);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pff-wrap .pff-feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(46,125,107,0.14); }
+  .pff-wrap .pff-feature-icon { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+  .pff-wrap .pff-feature-card h3 { font-size: 1.1rem; font-weight: 700; color: #2C2C2C; margin-bottom: 8px; }
+  .pff-wrap .pff-feature-card p { font-size: 0.9rem; color: #6B7280; line-height: 1.65; margin: 0; }
+
+  /* ── PHONE SHOWCASE ── */
+  .pff-wrap .pff-showcase {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .pff-wrap .pff-showcase.pff-reverse { flex-direction: row-reverse; }
+  .pff-wrap .pff-showcase-text { flex: 1; min-width: 260px; }
+  .pff-wrap .pff-showcase-img {
+    flex: 0 0 auto;
+    width: min(280px, 90vw);
+  }
+  .pff-wrap .pff-phone-frame {
+    position: relative;
+    width: 100%;
+    background: #111;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.28), 0 0 0 1px rgba(255,255,255,0.08);
+  }
+  .pff-wrap .pff-phone-notch {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 8px;
+    background: #333;
+    border-radius: 10px;
+    z-index: 2;
+  }
+
+  /* ── TOPICS PILLS ── */
+  .pff-wrap .pff-pills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
+  }
+  .pff-wrap .pff-pill {
+    display: inline-block;
+    padding: 9px 18px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(46,125,107,0.3);
+    font-size: 0.9rem;
+    color: #2E7D6B;
+    font-weight: 600;
+    background: rgba(46,125,107,0.05);
+  }
+
+  /* ── PRAYER CARDS ── */
+  .pff-wrap .pff-prayer-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 32px;
+    max-width: 460px;
+  }
+  .pff-wrap .pff-prayer-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 18px 20px;
+    border: 1px solid rgba(46,125,107,0.12);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .pff-wrap .pff-prayer-meta { font-size: 0.78rem; color: #6B7280; margin-bottom: 6px; }
+  .pff-wrap .pff-prayer-text { font-size: 0.95rem; color: #2C2C2C; margin-bottom: 12px; line-height: 1.55; }
+  .pff-wrap .pff-prayer-actions { display: flex; gap: 10px; align-items: center; }
+  .pff-wrap .pff-pray-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 50px;
+    border: 1.5px solid #2E7D6B;
+    background: transparent;
+    color: #2E7D6B;
+    font-family: Georgia, serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .pff-wrap .pff-pray-count { font-size: 0.82rem; color: #6B7280; }
+
+  /* ── PERSPECTIVES ── */
+  .pff-wrap .pff-perspectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .pff-wrap .pff-perspective-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1.5px solid rgba(46,125,107,0.15);
+    text-align: center;
+  }
+  .pff-wrap .pff-perspective-card .pff-p-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+  .pff-wrap .pff-perspective-card h4 { font-size: 1rem; font-weight: 700; color: #2C2C2C; margin-bottom: 6px; }
+  .pff-wrap .pff-perspective-card p { font-size: 0.83rem; color: #6B7280; line-height: 1.5; margin: 0; }
+
+  /* ── ROOTS GRID ── */
+  .pff-wrap .pff-roots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .pff-wrap .pff-roots-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 20px 16px;
+    border: 1px solid rgba(46,125,107,0.12);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .pff-wrap .pff-roots-card .pff-r-icon { font-size: 1.6rem; margin-bottom: 8px; display: block; }
+  .pff-wrap .pff-roots-card h4 { font-size: 0.95rem; font-weight: 700; color: #2C2C2C; margin-bottom: 4px; }
+  .pff-wrap .pff-roots-card p { font-size: 0.8rem; color: #6B7280; line-height: 1.5; margin: 0; }
+
+  /* ── CTA ── */
+  .pff-wrap .pff-cta {
+    background: linear-gradient(135deg, #1a5c4e 0%, #2E7D6B 60%, #3A9E88 100%);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 80px 24px;
+  }
+  .pff-wrap .pff-cta .pff-h2 { color: #FFFFFF; margin-bottom: 16px; }
+  .pff-wrap .pff-cta p { opacity: 0.88; font-size: 1.1rem; font-style: italic; max-width: 480px; margin: 0 auto 36px; color: #FFFFFF; }
+
+  /* ── FOOTER ── */
+  .pff-wrap .pff-footer {
+    background: #111;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 0.85rem;
+  }
+  .pff-wrap .pff-footer a { color: #3A9E88; text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .pff-wrap .pff-showcase, .pff-wrap .pff-showcase.pff-reverse { flex-direction: column; }
+    .pff-wrap .pff-showcase-img { width: min(240px, 80vw); margin: 0 auto; }
+    .pff-wrap .pff-section { padding: 52px 20px; }
+  }
+</style>
+
+<div class="pff-wrap">
+
+  <!-- ══════════ HERO ══════════ -->
+  <div class="pff-hero">
+    <svg class="pff-hero-logo" viewBox="-30 0 160 130" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <rect x="45" y="58" width="10" height="16" rx="2"/>
+      <ellipse cx="50" cy="32" rx="46" ry="26"/>
+      <circle cx="50" cy="8"  r="18"/>
+      <circle cx="26" cy="14" r="17"/>
+      <circle cx="74" cy="14" r="17"/>
+      <circle cx="6"  cy="28" r="16"/>
+      <circle cx="94" cy="28" r="16"/>
+      <circle cx="10" cy="46" r="14"/>
+      <circle cx="90" cy="46" r="14"/>
+      <circle cx="26" cy="50" r="14"/>
+      <circle cx="74" cy="50" r="14"/>
+      <circle cx="50" cy="52" r="14"/>
+      <g fill="none" stroke="white" stroke-linecap="round">
+        <path d="M50 74 C46 76 34 80 14 84"    stroke-width="2.5"/>
+        <path d="M50 74 C54 76 66 80 86 84"    stroke-width="2.5"/>
+        <path d="M50 74 C50 82 50 92 50 110"   stroke-width="2.2"/>
+        <path d="M48 76 C40 84 26 94 4 100"    stroke-width="2"/>
+        <path d="M52 76 C60 84 74 94 96 100"   stroke-width="2"/>
+        <path d="M47 77 C36 90 18 102 -4 112"  stroke-width="1.8"/>
+        <path d="M53 77 C64 90 82 102 104 112" stroke-width="1.8"/>
+        <path d="M49 79 C44 90 36 104 22 118"  stroke-width="1.5"/>
+        <path d="M51 79 C56 90 64 104 78 118"  stroke-width="1.5"/>
+      </g>
+    </svg>
+    <p style="font-size:0.8rem; letter-spacing:0.18em; text-transform:uppercase; opacity:0.7; margin-bottom:12px; color:#FFFFFF; font-family:Georgia,serif;">Introducing</p>
+    <h1>Perfectly Flawed<br/>Families</h1>
+    <p class="pff-sub">A faith-based family app with Scripture-grounded devotions, wisdom, and a community prayer wall — built for real families.</p>
+    <div class="pff-hero-btns">
+      <a href="https://perfectlyflawedfamilies.web.app" class="pff-btn-primary">Open the App</a>
+      <a href="https://perfectlyflawedleadership.com/" class="pff-btn-outline">Learn More</a>
+    </div>
+  </div>
+
+  <!-- ══════════ VERSE BANNER ══════════ -->
+  <div class="pff-verse-banner">
+    <blockquote>"And we know that in all things God works for the good of those who love him, who have been called according to his purpose."</blockquote>
+    <cite>— Romans 8:28</cite>
+  </div>
+
+  <!-- ══════════ FEATURES OVERVIEW ══════════ -->
+  <div class="pff-section pff-section-cream">
+    <div class="pff-container">
+      <span class="pff-label">Everything your family needs</span>
+      <p class="pff-h2">Four Powerful Tools,<br/>One Faithful App</p>
+      <p class="pff-lead">Perfectly Flawed Families brings devotions, Scripture-grounded counsel, community prayer, and personal growth into a single, beautifully simple experience.</p>
+
+      <div class="pff-features-grid">
+        <div class="pff-feature-card">
+          <span class="pff-feature-icon">📖</span>
+          <h3>Family Devotions</h3>
+          <p>Scripture-grounded devotions tailored to every season of family life — for parents, children, couples, or the whole family together.</p>
+        </div>
+        <div class="pff-feature-card">
+          <span class="pff-feature-icon">🌳</span>
+          <h3>Family Roots</h3>
+          <p>Describe what your family is facing and receive Scripture-backed wisdom and practical next steps for your hardest moments.</p>
+        </div>
+        <div class="pff-feature-card">
+          <span class="pff-feature-icon">🙏</span>
+          <h3>Family Prayer Wall</h3>
+          <p>Share prayer requests and lift other families up in prayer. Join topic-based groups like Praying Parents, Couples Circle, and more.</p>
+        </div>
+        <div class="pff-feature-card">
+          <span class="pff-feature-icon">✨</span>
+          <h3>Your Profile</h3>
+          <p>Track your devotions, prayers, and roots sessions. Manage private prayer groups and personalize your experience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ DEVOTIONS SHOWCASE ══════════ -->
+  <div class="pff-section pff-section-white">
+    <div class="pff-container">
+      <div class="pff-showcase">
+        <div class="pff-showcase-text">
+          <span class="pff-label">Family Devotions</span>
+          <p class="pff-h2">Built for Your Family, Exactly as You Are</p>
+          <p class="pff-lead" style="margin-bottom:24px;">Select your family's ages, choose a perspective, and receive a devotion crafted for your unique household. From toddlers to teens, parents to couples — every devotion meets you where you are.</p>
+
+          <div class="pff-perspectives-grid">
+            <div class="pff-perspective-card">
+              <span class="pff-p-icon">🙏</span>
+              <h4>For Parents</h4>
+              <p>Guidance for you as the parent</p>
+            </div>
+            <div class="pff-perspective-card">
+              <span class="pff-p-icon">🌱</span>
+              <h4>For My Child</h4>
+              <p>Nurtures &amp; speaks directly to your child</p>
+            </div>
+            <div class="pff-perspective-card">
+              <span class="pff-p-icon">👨‍👩‍👧</span>
+              <h4>Together</h4>
+              <p>Read aloud as a family</p>
+            </div>
+            <div class="pff-perspective-card">
+              <span class="pff-p-icon">💍</span>
+              <h4>For Couples</h4>
+              <p>Devotion for husband &amp; wife</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pff-showcase-img">
+          <div class="pff-phone-frame">
+            <div class="pff-phone-notch"></div>
+            <div style="background:#F5F2EC; border-radius:30px; overflow:hidden; min-height:520px; display:flex; flex-direction:column; font-family:Georgia,'Times New Roman',serif;">
+              <!-- status bar -->
+              <div style="padding:10px 16px 2px; display:flex; justify-content:space-between; align-items:center; flex-shrink:0;">
+                <span style="font-size:0.6rem; font-weight:700; color:#2C2C2C; font-family:sans-serif;">6:03</span>
+                <div style="display:flex; align-items:center; gap:3px;">
+                  <svg width="14" height="10" viewBox="0 0 16 12"><rect x="0" y="4" width="3" height="8" rx="1" fill="#2C2C2C"/><rect x="4.5" y="2.5" width="3" height="9.5" rx="1" fill="#2C2C2C"/><rect x="9" y="1" width="3" height="11" rx="1" fill="#2C2C2C"/><rect x="13.5" y="0" width="2.5" height="12" rx="1" fill="#2C2C2C" opacity=".3"/></svg>
+                  <svg width="14" height="10" viewBox="0 0 20 14"><path d="M10 3C6.5 3 3.4 4.5 1.2 7L0 5.5C2.6 2.6 6.1 1 10 1s7.4 1.6 10 4.5L18.8 7C16.6 4.5 13.5 3 10 3z" fill="#2C2C2C"/><path d="M10 7c-2 0-3.8.8-5.1 2.2L3.7 7.8C5.4 6.1 7.6 5 10 5s4.6 1.1 6.3 2.8l-1.2 1.4C13.8 7.8 12 7 10 7z" fill="#2C2C2C"/><circle cx="10" cy="13" r="1.5" fill="#2C2C2C"/></svg>
+                  <div style="width:18px; height:9px; border:1.5px solid #2C2C2C; border-radius:2px; position:relative; display:flex; align-items:center; padding:1px;"><div style="width:70%; height:100%; background:#2C2C2C; border-radius:1px;"></div><div style="position:absolute; right:-4px; top:50%; transform:translateY(-50%); width:2.5px; height:5px; background:#2C2C2C; border-radius:0 1px 1px 0;"></div></div>
+                </div>
+              </div>
+              <!-- screen content -->
+              <div style="flex:1; padding:6px 14px 0; overflow:hidden;">
+                <div style="text-align:center; margin-bottom:10px;">
+                  <svg width="34" height="34" viewBox="-30 0 160 130" fill="#2E7D6B"><ellipse cx="50" cy="32" rx="46" ry="26"/><circle cx="50" cy="8" r="18"/><circle cx="26" cy="14" r="17"/><circle cx="74" cy="14" r="17"/><circle cx="6" cy="28" r="16"/><circle cx="94" cy="28" r="16"/><rect x="45" y="58" width="10" height="16" rx="2"/><g fill="none" stroke="#2E7D6B" stroke-linecap="round"><path d="M50 74 C46 76 34 80 14 84" stroke-width="3.5"/><path d="M50 74 C54 76 66 80 86 84" stroke-width="3.5"/><path d="M50 74 C50 82 50 92 50 110" stroke-width="3"/><path d="M48 76 C40 84 26 94 4 100" stroke-width="2.5"/><path d="M52 76 C60 84 74 94 96 100" stroke-width="2.5"/></g></svg>
+                </div>
+                <p style="text-align:center; font-size:1.05rem; font-weight:700; color:#2C2C2C; margin:0 0 3px;">Family Devotions</p>
+                <p style="text-align:center; font-size:0.68rem; color:#6B7280; font-style:italic; margin:0 0 12px; line-height:1.4;">Scripture-grounded devotions for every season of family life.</p>
+                <!-- WHO'S IN YOUR FAMILY -->
+                <div style="background:white; border-radius:13px; padding:11px 12px; margin-bottom:8px; box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+                  <p style="font-size:0.58rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#2C2C2C; margin:0 0 2px;">WHO'S IN YOUR FAMILY?</p>
+                  <p style="font-size:0.58rem; color:#6B7280; margin:0 0 7px; line-height:1.3;">Select all ages so the devotion fits your family.</p>
+                  <div style="display:flex; flex-wrap:wrap; gap:5px;">
+                    <span style="padding:3px 8px; border-radius:50px; border:1.5px solid rgba(46,125,107,0.3); font-size:0.58rem; color:#2C2C2C; line-height:1.4;"><b>Little Ones</b> <span style="color:#6B7280;">Ages 0–5</span></span>
+                    <span style="padding:3px 8px; border-radius:50px; border:1.5px solid rgba(46,125,107,0.3); font-size:0.58rem; color:#2C2C2C; line-height:1.4;"><b>Elementary</b> <span style="color:#6B7280;">Ages 6–11</span></span>
+                    <span style="padding:3px 8px; border-radius:50px; border:1.5px solid rgba(46,125,107,0.3); font-size:0.58rem; color:#2C2C2C; line-height:1.4;"><b>Teens</b> <span style="color:#6B7280;">Ages 12–17</span></span>
+                    <span style="padding:3px 8px; border-radius:50px; border:1.5px solid rgba(46,125,107,0.3); font-size:0.58rem; color:#2C2C2C; line-height:1.4;"><b>Adults Only</b> <span style="color:#6B7280;">No children</span></span>
+                  </div>
+                </div>
+                <!-- DEVOTION PERSPECTIVE -->
+                <div style="background:white; border-radius:13px; padding:11px 12px; box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+                  <p style="font-size:0.58rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#2C2C2C; margin:0 0 3px;">DEVOTION PERSPECTIVE</p>
+                  <p style="font-size:0.58rem; color:#6B7280; margin:0 0 7px; line-height:1.3;">Who is this devotion speaking to?</p>
+                  <!-- Selected -->
+                  <div style="display:flex; align-items:center; gap:7px; border:1.5px solid #2E7D6B; border-radius:9px; padding:7px 9px; margin-bottom:5px; background:rgba(46,125,107,0.04);">
+                    <span style="font-size:0.9rem; flex-shrink:0;">🙏</span>
+                    <div style="flex:1; min-width:0;">
+                      <p style="font-size:0.7rem; font-weight:700; color:#2E7D6B; margin:0; line-height:1.2;">For Parents</p>
+                      <p style="font-size:0.58rem; color:#6B7280; margin:0; line-height:1.2;">Guidance for you as the parent</p>
+                    </div>
+                    <div style="width:14px; height:14px; border-radius:50%; border:2px solid #2E7D6B; background:#2E7D6B; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><div style="width:5px; height:5px; border-radius:50%; background:white;"></div></div>
+                  </div>
+                  <!-- Unselected -->
+                  <div style="display:flex; align-items:center; gap:7px; border:1px solid rgba(46,125,107,0.2); border-radius:9px; padding:7px 9px;">
+                    <span style="font-size:0.9rem; flex-shrink:0;">🌱</span>
+                    <div style="flex:1; min-width:0;">
+                      <p style="font-size:0.7rem; font-weight:700; color:#2C2C2C; margin:0; line-height:1.2;">For My Child</p>
+                      <p style="font-size:0.58rem; color:#6B7280; margin:0; line-height:1.2;">Nurtures &amp; speaks to your child</p>
+                    </div>
+                    <div style="width:14px; height:14px; border-radius:50%; border:1.5px solid rgba(46,125,107,0.3); flex-shrink:0;"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom nav -->
+              <div style="background:white; border-top:1px solid rgba(0,0,0,0.07); padding:7px 0 12px; display:grid; grid-template-columns:repeat(5,1fr); align-items:center; flex-shrink:0; margin-top:10px;">
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Home</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E7D6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                  <p style="font-size:0.5rem; color:#2E7D6B; margin:2px 0 0; font-weight:700; font-family:sans-serif;">Devotion</p>
+                  <div style="width:14px; height:2px; background:#2E7D6B; margin:2px auto 0; border-radius:2px;"></div>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="-30 0 160 130" fill="#9CA3AF" style="display:block;margin:0 auto;"><ellipse cx="50" cy="32" rx="46" ry="26"/><circle cx="50" cy="8" r="18"/><circle cx="26" cy="14" r="17"/><circle cx="74" cy="14" r="17"/><rect x="45" y="58" width="10" height="16" rx="2"/><g fill="none" stroke="#9CA3AF" stroke-linecap="round"><path d="M50 74 C50 82 50 92 50 110" stroke-width="5"/><path d="M50 74 C46 76 34 80 14 84" stroke-width="5"/><path d="M50 74 C54 76 66 80 86 84" stroke-width="5"/></g></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Roots</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Prayer</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Profile</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ FAMILY TOPICS ══════════ -->
+  <div class="pff-section pff-section-cream">
+    <div class="pff-container">
+      <span class="pff-label">Explore by topic</span>
+      <p class="pff-h2">Devotions for Every Season<br/>of Family Life</p>
+      <p class="pff-lead">Browse hundreds of topics spanning marriage, parenting, faith, and relationships — or let the app recommend based on your family's needs.</p>
+      <div class="pff-pills-wrap">
+        <span class="pff-pill">When family wounds run deep</span>
+        <span class="pff-pill">Serving your partner sacrificially</span>
+        <span class="pff-pill">Praying together as a couple</span>
+        <span class="pff-pill">Guarding your heart as a spouse</span>
+        <span class="pff-pill">When your teenager pulls away</span>
+        <span class="pff-pill">Raising children in faith</span>
+        <span class="pff-pill">Financial stress in marriage</span>
+        <span class="pff-pill">Blended family challenges</span>
+        <span class="pff-pill">Teaching forgiveness at home</span>
+        <span class="pff-pill">When grief enters your home</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ FAMILY ROOTS ══════════ -->
+  <div class="pff-section pff-section-white">
+    <div class="pff-container">
+      <div class="pff-showcase pff-reverse">
+        <div class="pff-showcase-text">
+          <span class="pff-label">Family Roots</span>
+          <p class="pff-h2">Faith-Based Guidance for Your Family's Toughest Moments</p>
+          <p class="pff-lead" style="margin-bottom:24px;">Describe what your family is facing. Family Roots responds with Scripture-grounded truth, practical wisdom, and honest next steps — grace for your family's hardest moments.</p>
+
+          <div class="pff-roots-grid">
+            <div class="pff-roots-card">
+              <span class="pff-r-icon">💬</span>
+              <h4>Marriage Communication</h4>
+              <p>Struggling to connect with your spouse</p>
+            </div>
+            <div class="pff-roots-card">
+              <span class="pff-r-icon">👨‍👩‍👧‍👦</span>
+              <h4>Parenting Disagreements</h4>
+              <p>When you and your partner don't agree</p>
+            </div>
+            <div class="pff-roots-card">
+              <span class="pff-r-icon">🤝</span>
+              <h4>Sibling Conflict</h4>
+              <p>Children fighting or struggling to get along</p>
+            </div>
+            <div class="pff-roots-card">
+              <span class="pff-r-icon">🏡</span>
+              <h4>In-Law Boundaries</h4>
+              <p>Navigating extended family relationships</p>
+            </div>
+            <div class="pff-roots-card">
+              <span class="pff-r-icon">🌱</span>
+              <h4>Blended Families</h4>
+              <p>Integrating step-children, co-parenting</p>
+            </div>
+            <div class="pff-roots-card">
+              <span class="pff-r-icon">🔥</span>
+              <h4>Teenage Rebellion</h4>
+              <p>A teenager making concerning choices</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pff-showcase-img">
+          <div class="pff-phone-frame">
+            <div class="pff-phone-notch"></div>
+            <div style="background:#F5F2EC; border-radius:30px; overflow:hidden; min-height:520px; display:flex; flex-direction:column; font-family:Georgia,'Times New Roman',serif;">
+              <!-- status bar -->
+              <div style="padding:10px 16px 2px; display:flex; justify-content:space-between; align-items:center; flex-shrink:0;">
+                <span style="font-size:0.6rem; font-weight:700; color:#2C2C2C; font-family:sans-serif;">6:04</span>
+                <div style="display:flex; align-items:center; gap:3px;">
+                  <svg width="14" height="10" viewBox="0 0 16 12"><rect x="0" y="4" width="3" height="8" rx="1" fill="#2C2C2C"/><rect x="4.5" y="2.5" width="3" height="9.5" rx="1" fill="#2C2C2C"/><rect x="9" y="1" width="3" height="11" rx="1" fill="#2C2C2C"/><rect x="13.5" y="0" width="2.5" height="12" rx="1" fill="#2C2C2C" opacity=".3"/></svg>
+                  <svg width="14" height="10" viewBox="0 0 20 14"><path d="M10 3C6.5 3 3.4 4.5 1.2 7L0 5.5C2.6 2.6 6.1 1 10 1s7.4 1.6 10 4.5L18.8 7C16.6 4.5 13.5 3 10 3z" fill="#2C2C2C"/><path d="M10 7c-2 0-3.8.8-5.1 2.2L3.7 7.8C5.4 6.1 7.6 5 10 5s4.6 1.1 6.3 2.8l-1.2 1.4C13.8 7.8 12 7 10 7z" fill="#2C2C2C"/><circle cx="10" cy="13" r="1.5" fill="#2C2C2C"/></svg>
+                  <div style="width:18px; height:9px; border:1.5px solid #2C2C2C; border-radius:2px; position:relative; display:flex; align-items:center; padding:1px;"><div style="width:55%; height:100%; background:#2C2C2C; border-radius:1px;"></div><div style="position:absolute; right:-4px; top:50%; transform:translateY(-50%); width:2.5px; height:5px; background:#2C2C2C; border-radius:0 1px 1px 0;"></div></div>
+                </div>
+              </div>
+              <!-- content -->
+              <div style="flex:1; padding:8px 14px 0; overflow:hidden;">
+                <p style="font-size:1.1rem; font-weight:700; color:#2C2C2C; margin:0 0 2px;">Family Roots</p>
+                <p style="font-size:0.65rem; color:#6B7280; font-style:italic; margin:0 0 10px; line-height:1.35;">Faith-based guidance for your family's toughest moments</p>
+                <!-- Tabs -->
+                <div style="display:grid; grid-template-columns:1fr 1fr; background:rgba(0,0,0,0.07); border-radius:10px; overflow:hidden; margin-bottom:10px;">
+                  <div style="background:#2E7D6B; padding:7px 4px; text-align:center; border-radius:10px;">
+                    <p style="font-size:0.6rem; font-weight:700; color:white; margin:0; text-transform:uppercase; letter-spacing:0.05em;">GET GUIDANCE</p>
+                  </div>
+                  <div style="padding:7px 4px; text-align:center;">
+                    <p style="font-size:0.6rem; color:#6B7280; margin:0; text-transform:uppercase; letter-spacing:0.05em;">HISTORY (0)</p>
+                  </div>
+                </div>
+                <!-- HOW IT WORKS -->
+                <div style="background:#1e1e1e; border-radius:12px; padding:11px 12px; margin-bottom:9px;">
+                  <p style="font-size:0.55rem; letter-spacing:0.12em; color:#2E7D6B; text-transform:uppercase; font-weight:700; margin:0 0 4px;">♦ HOW IT WORKS</p>
+                  <p style="font-size:0.68rem; color:rgba(255,255,255,0.88); line-height:1.5; margin:0;">Describe what your family is facing. Family Roots responds with Scripture-grounded truth, practical wisdom, and honest next steps — grace for your family's hardest moments.</p>
+                </div>
+                <!-- Situation grid -->
+                <p style="font-size:0.55rem; text-transform:uppercase; letter-spacing:0.1em; color:#6B7280; font-weight:700; margin:0 0 7px;">CHOOSE YOUR SITUATION</p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                  <div style="background:white; border-radius:11px; padding:9px 9px; box-shadow:0 1px 5px rgba(0,0,0,0.06);">
+                    <div style="font-size:1rem; margin-bottom:3px;">💬</div>
+                    <p style="font-size:0.65rem; font-weight:700; color:#2C2C2C; margin:0 0 2px; line-height:1.25;">Marriage Communication</p>
+                    <p style="font-size:0.55rem; color:#6B7280; margin:0; line-height:1.3;">Struggling to connect with your spouse</p>
+                  </div>
+                  <div style="background:white; border-radius:11px; padding:9px 9px; box-shadow:0 1px 5px rgba(0,0,0,0.06);">
+                    <div style="font-size:1rem; margin-bottom:3px;">👨‍👩‍👧‍👦</div>
+                    <p style="font-size:0.65rem; font-weight:700; color:#2C2C2C; margin:0 0 2px; line-height:1.25;">Parenting Disagreements</p>
+                    <p style="font-size:0.55rem; color:#6B7280; margin:0; line-height:1.3;">You and your partner disagree</p>
+                  </div>
+                  <div style="background:white; border-radius:11px; padding:9px 9px; box-shadow:0 1px 5px rgba(0,0,0,0.06);">
+                    <div style="font-size:1rem; margin-bottom:3px;">🌱</div>
+                    <p style="font-size:0.65rem; font-weight:700; color:#2C2C2C; margin:0 0 2px; line-height:1.25;">Blended Family Challenges</p>
+                    <p style="font-size:0.55rem; color:#6B7280; margin:0; line-height:1.3;">Integrating step-children, co-parenting</p>
+                  </div>
+                  <div style="background:white; border-radius:11px; padding:9px 9px; box-shadow:0 1px 5px rgba(0,0,0,0.06);">
+                    <div style="font-size:1rem; margin-bottom:3px;">🔥</div>
+                    <p style="font-size:0.65rem; font-weight:700; color:#2C2C2C; margin:0 0 2px; line-height:1.25;">Teenage Rebellion</p>
+                    <p style="font-size:0.55rem; color:#6B7280; margin:0; line-height:1.3;">A teenager making concerning choices</p>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom nav -->
+              <div style="background:white; border-top:1px solid rgba(0,0,0,0.07); padding:7px 0 12px; display:grid; grid-template-columns:repeat(5,1fr); align-items:center; flex-shrink:0; margin-top:10px;">
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Home</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Devotion</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="-30 0 160 130" fill="#2E7D6B" style="display:block;margin:0 auto;"><ellipse cx="50" cy="32" rx="46" ry="26"/><circle cx="50" cy="8" r="18"/><circle cx="26" cy="14" r="17"/><circle cx="74" cy="14" r="17"/><rect x="45" y="58" width="10" height="16" rx="2"/><g fill="none" stroke="#2E7D6B" stroke-linecap="round"><path d="M50 74 C50 82 50 92 50 110" stroke-width="5"/><path d="M50 74 C46 76 34 80 14 84" stroke-width="5"/><path d="M50 74 C54 76 66 80 86 84" stroke-width="5"/></g></svg>
+                  <p style="font-size:0.5rem; color:#2E7D6B; margin:2px 0 0; font-weight:700; font-family:sans-serif;">Roots</p>
+                  <div style="width:14px; height:2px; background:#2E7D6B; margin:2px auto 0; border-radius:2px;"></div>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Prayer</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Profile</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ PRAYER WALL ══════════ -->
+  <div class="pff-section pff-section-cream">
+    <div class="pff-container">
+      <div class="pff-showcase">
+        <div class="pff-showcase-text">
+          <span class="pff-label">Family Prayer Wall</span>
+          <p class="pff-h2">Lift Your Family Up Together in Prayer</p>
+          <p class="pff-lead">Share your prayer requests and pray for other families in the community. Join focused groups — Couples Circle, Praying Parents, Singles, Expecting Families, and more.</p>
+          <p class="pff-lead" style="margin-top:14px;">Every "I Prayed" is a real person interceding on your behalf. You are not alone.</p>
+
+          <div class="pff-prayer-cards">
+            <div class="pff-prayer-card">
+              <p class="pff-prayer-meta">Anonymous · Praying Parents · Just now</p>
+              <p class="pff-prayer-text">Pray for my son who is struggling in school</p>
+              <div class="pff-prayer-actions">
+                <button class="pff-pray-btn" aria-label="I prayed for this request">🙏 I Prayed</button>
+                <span class="pff-pray-count">🙏 1 prayed</span>
+              </div>
+            </div>
+            <div class="pff-prayer-card">
+              <p class="pff-prayer-meta">Anonymous · Couples Circle · 1m ago</p>
+              <p class="pff-prayer-text">Pray for my grandpa who doesn't know Jesus</p>
+              <div class="pff-prayer-actions">
+                <button class="pff-pray-btn" aria-label="I prayed for this request">🙏 I Prayed</button>
+                <span class="pff-pray-count">🙏 2 prayed</span>
+              </div>
+            </div>
+            <div class="pff-prayer-card">
+              <p class="pff-prayer-meta">Anonymous · Expecting Families · 3m ago</p>
+              <p class="pff-prayer-text">Pray for a new job as I lost mine</p>
+              <div class="pff-prayer-actions">
+                <button class="pff-pray-btn" aria-label="I prayed for this request">🙏 I Prayed</button>
+                <span class="pff-pray-count">🙏 0 prayed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pff-showcase-img">
+          <div class="pff-phone-frame">
+            <div class="pff-phone-notch"></div>
+            <div style="background:#F5F2EC; border-radius:30px; overflow:hidden; min-height:520px; display:flex; flex-direction:column; font-family:Georgia,'Times New Roman',serif;">
+              <!-- status bar -->
+              <div style="padding:10px 16px 2px; display:flex; justify-content:space-between; align-items:center; flex-shrink:0;">
+                <span style="font-size:0.6rem; font-weight:700; color:#2C2C2C; font-family:sans-serif;">6:07</span>
+                <div style="display:flex; align-items:center; gap:3px;">
+                  <svg width="14" height="10" viewBox="0 0 16 12"><rect x="0" y="4" width="3" height="8" rx="1" fill="#2C2C2C"/><rect x="4.5" y="2.5" width="3" height="9.5" rx="1" fill="#2C2C2C"/><rect x="9" y="1" width="3" height="11" rx="1" fill="#2C2C2C"/><rect x="13.5" y="0" width="2.5" height="12" rx="1" fill="#2C2C2C" opacity=".3"/></svg>
+                  <svg width="14" height="10" viewBox="0 0 20 14"><path d="M10 3C6.5 3 3.4 4.5 1.2 7L0 5.5C2.6 2.6 6.1 1 10 1s7.4 1.6 10 4.5L18.8 7C16.6 4.5 13.5 3 10 3z" fill="#2C2C2C"/><path d="M10 7c-2 0-3.8.8-5.1 2.2L3.7 7.8C5.4 6.1 7.6 5 10 5s4.6 1.1 6.3 2.8l-1.2 1.4C13.8 7.8 12 7 10 7z" fill="#2C2C2C"/><circle cx="10" cy="13" r="1.5" fill="#2C2C2C"/></svg>
+                  <div style="width:18px; height:9px; border:1.5px solid #2C2C2C; border-radius:2px; position:relative; display:flex; align-items:center; padding:1px;"><div style="width:45%; height:100%; background:#2C2C2C; border-radius:1px;"></div><div style="position:absolute; right:-4px; top:50%; transform:translateY(-50%); width:2.5px; height:5px; background:#2C2C2C; border-radius:0 1px 1px 0;"></div></div>
+                </div>
+              </div>
+              <!-- header -->
+              <div style="padding:6px 14px 0; display:flex; align-items:flex-start; justify-content:space-between; flex-shrink:0;">
+                <div>
+                  <p style="font-size:1.1rem; font-weight:700; color:#2C2C2C; margin:0 0 2px;">Family Prayer Wall</p>
+                  <p style="font-size:0.62rem; color:#6B7280; font-style:italic; margin:0;">Lift your family up together in prayer</p>
+                </div>
+                <div style="width:32px; height:32px; background:#2E7D6B; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 3px 10px rgba(46,125,107,0.4);">
+                  <span style="color:white; font-size:1.1rem; line-height:1; font-family:sans-serif;">+</span>
+                </div>
+              </div>
+              <!-- filter pills -->
+              <div style="padding:7px 14px; display:flex; gap:5px; overflow:hidden; flex-shrink:0;">
+                <span style="padding:4px 10px; border-radius:50px; background:#2E7D6B; color:white; font-size:0.6rem; font-weight:700; white-space:nowrap;">All</span>
+                <span style="padding:4px 10px; border-radius:50px; border:1px solid rgba(46,125,107,0.3); color:#2E7D6B; font-size:0.6rem; font-weight:600; white-space:nowrap;">Couples Circle</span>
+                <span style="padding:4px 10px; border-radius:50px; border:1px solid rgba(46,125,107,0.3); color:#2E7D6B; font-size:0.6rem; font-weight:600; white-space:nowrap;">Praying Parents</span>
+              </div>
+              <!-- prayer cards -->
+              <div style="flex:1; padding:0 14px; display:flex; flex-direction:column; gap:7px; overflow:hidden;">
+                <!-- card 1 -->
+                <div style="background:white; border-radius:12px; padding:11px 12px; box-shadow:0 1px 5px rgba(0,0,0,0.05);">
+                  <div style="display:flex; align-items:center; gap:7px; margin-bottom:5px;">
+                    <div style="width:26px; height:26px; border-radius:50%; background:rgba(46,125,107,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                      <span style="font-size:0.65rem; font-weight:700; color:#2E7D6B; font-family:sans-serif;">A</span>
+                    </div>
+                    <div>
+                      <p style="font-size:0.68rem; font-weight:700; color:#2C2C2C; margin:0; line-height:1.2;">Anonymous</p>
+                      <p style="font-size:0.55rem; color:#9CA3AF; margin:0; line-height:1.2;">Expecting Families · Just now</p>
+                    </div>
+                  </div>
+                  <p style="font-size:0.72rem; color:#2C2C2C; margin:0 0 7px; line-height:1.4;">Pray for a new job as I lost mine</p>
+                  <div style="display:flex; align-items:center; gap:7px;">
+                    <span style="padding:4px 10px; border-radius:50px; border:1.5px solid #2E7D6B; color:#2E7D6B; font-size:0.58rem; font-weight:700;">🙏 I prayed</span>
+                    <span style="font-size:0.58rem; color:#9CA3AF;">🙏 0 prayed</span>
+                  </div>
+                </div>
+                <!-- card 2 -->
+                <div style="background:white; border-radius:12px; padding:11px 12px; box-shadow:0 1px 5px rgba(0,0,0,0.05);">
+                  <div style="display:flex; align-items:center; gap:7px; margin-bottom:5px;">
+                    <div style="width:26px; height:26px; border-radius:50%; background:rgba(46,125,107,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                      <span style="font-size:0.65rem; font-weight:700; color:#2E7D6B; font-family:sans-serif;">A</span>
+                    </div>
+                    <div>
+                      <p style="font-size:0.68rem; font-weight:700; color:#2C2C2C; margin:0; line-height:1.2;">Anonymous</p>
+                      <p style="font-size:0.55rem; color:#9CA3AF; margin:0; line-height:1.2;">Praying Parents · 1m ago</p>
+                    </div>
+                  </div>
+                  <p style="font-size:0.72rem; color:#2C2C2C; margin:0 0 7px; line-height:1.4;">Pray for my son who is struggling in school</p>
+                  <div style="display:flex; align-items:center; gap:7px;">
+                    <span style="padding:4px 10px; border-radius:50px; background:#2E7D6B; color:white; font-size:0.58rem; font-weight:700;">🙏 Pray again</span>
+                    <span style="font-size:0.58rem; color:#9CA3AF;">🙏 1 prayed</span>
+                  </div>
+                </div>
+                <!-- card 3 -->
+                <div style="background:white; border-radius:12px; padding:11px 12px; box-shadow:0 1px 5px rgba(0,0,0,0.05);">
+                  <div style="display:flex; align-items:center; gap:7px; margin-bottom:5px;">
+                    <div style="width:26px; height:26px; border-radius:50%; background:rgba(46,125,107,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                      <span style="font-size:0.65rem; font-weight:700; color:#2E7D6B; font-family:sans-serif;">A</span>
+                    </div>
+                    <div>
+                      <p style="font-size:0.68rem; font-weight:700; color:#2C2C2C; margin:0; line-height:1.2;">Anonymous</p>
+                      <p style="font-size:0.55rem; color:#9CA3AF; margin:0; line-height:1.2;">Praying Parents · 1m ago</p>
+                    </div>
+                  </div>
+                  <p style="font-size:0.72rem; color:#2C2C2C; margin:0 0 7px; line-height:1.4;">Pray for my grandpa who doesn't know Jesus</p>
+                  <div style="display:flex; align-items:center; gap:7px;">
+                    <span style="padding:4px 10px; border-radius:50px; background:#2E7D6B; color:white; font-size:0.58rem; font-weight:700;">🙏 Pray again</span>
+                    <span style="font-size:0.58rem; color:#9CA3AF;">🙏 2 prayed</span>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom nav -->
+              <div style="background:white; border-top:1px solid rgba(0,0,0,0.07); padding:7px 0 12px; display:grid; grid-template-columns:repeat(5,1fr); align-items:center; flex-shrink:0; margin-top:8px;">
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Home</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Devotion</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="-30 0 160 130" fill="#9CA3AF" style="display:block;margin:0 auto;"><ellipse cx="50" cy="32" rx="46" ry="26"/><circle cx="50" cy="8" r="18"/><circle cx="26" cy="14" r="17"/><circle cx="74" cy="14" r="17"/><rect x="45" y="58" width="10" height="16" rx="2"/><g fill="none" stroke="#9CA3AF" stroke-linecap="round"><path d="M50 74 C50 82 50 92 50 110" stroke-width="5"/><path d="M50 74 C46 76 34 80 14 84" stroke-width="5"/><path d="M50 74 C54 76 66 80 86 84" stroke-width="5"/></g></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Roots</p>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E7D6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                  <p style="font-size:0.5rem; color:#2E7D6B; margin:2px 0 0; font-weight:700; font-family:sans-serif;">Prayer</p>
+                  <div style="width:14px; height:2px; background:#2E7D6B; margin:2px auto 0; border-radius:2px;"></div>
+                </div>
+                <div style="text-align:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <p style="font-size:0.5rem; color:#9CA3AF; margin:2px 0 0; font-family:sans-serif;">Profile</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ SECURE / REAL-TIME ══════════ -->
+  <div class="pff-section pff-section-white">
+    <div class="pff-container" style="text-align:center; max-width:720px;">
+      <span class="pff-label" style="text-align:center;">Built with care</span>
+      <p class="pff-h2">Private, Secure, and Always With You</p>
+      <p class="pff-lead" style="margin: 0 auto 40px; text-align:center; max-width:100%;">Your prayers, devotions, and Family Roots sessions are saved securely in real time. Create a private prayer group for your family or small group with a personal invite code.</p>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:18px;">
+        <div style="background:rgba(232,248,232,0.8); border-radius:16px; padding:22px; border:1px solid rgba(130,190,130,0.4); text-align:left;">
+          <p style="font-size:0.75rem; font-weight:700; color:#2A6A2A; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; font-family:Georgia,serif;">✓ Secure Connection</p>
+          <p style="font-size:0.85rem; color:#4A8A4A; line-height:1.6; margin:0; font-family:Georgia,serif;">All data is encrypted and saved in real time to your personal account.</p>
+        </div>
+        <div style="background:rgba(232,248,232,0.8); border-radius:16px; padding:22px; border:1px solid rgba(130,190,130,0.4); text-align:left;">
+          <p style="font-size:0.75rem; font-weight:700; color:#2A6A2A; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; font-family:Georgia,serif;">🔒 Private Groups</p>
+          <p style="font-size:0.85rem; color:#4A8A4A; line-height:1.6; margin:0; font-family:Georgia,serif;">Create invite-only prayer groups for your family, small group, or circle of friends.</p>
+        </div>
+        <div style="background:rgba(232,248,232,0.8); border-radius:16px; padding:22px; border:1px solid rgba(130,190,130,0.4); text-align:left;">
+          <p style="font-size:0.75rem; font-weight:700; color:#2A6A2A; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; font-family:Georgia,serif;">🔔 Notifications</p>
+          <p style="font-size:0.85rem; color:#4A8A4A; line-height:1.6; margin:0; font-family:Georgia,serif;">Get notified when new prayers are shared so you can intercede in real time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ CTA ══════════ -->
+  <div class="pff-cta">
+    <div class="pff-container">
+      <svg width="56" height="56" viewBox="-30 0 160 130" fill="white" style="margin: 0 auto 20px; display:block; opacity:0.9;">
+        <rect x="45" y="58" width="10" height="16" rx="2"/>
+        <ellipse cx="50" cy="32" rx="46" ry="26"/>
+        <circle cx="50" cy="8" r="18"/>
+        <circle cx="26" cy="14" r="17"/>
+        <circle cx="74" cy="14" r="17"/>
+        <circle cx="6" cy="28" r="16"/>
+        <circle cx="94" cy="28" r="16"/>
+        <g fill="none" stroke="white" stroke-linecap="round">
+          <path d="M50 74 C46 76 34 80 14 84" stroke-width="2.5"/>
+          <path d="M50 74 C54 76 66 80 86 84" stroke-width="2.5"/>
+          <path d="M50 74 C50 82 50 92 50 110" stroke-width="2.2"/>
+          <path d="M48 76 C40 84 26 94 4 100" stroke-width="2"/>
+          <path d="M52 76 C60 84 74 94 96 100" stroke-width="2"/>
+        </g>
+      </svg>
+      <p class="pff-h2">Your Family Was Made for This.</p>
+      <p>Start your first devotion today. No downloads required — it runs right in your browser, or install it as an app on any device.</p>
+      <div class="pff-hero-btns">
+        <a href="https://perfectlyflawedfamilies.web.app" class="pff-btn-primary">Get Started — It's Free</a>
+        <a href="https://perfectlyflawedleadership.com/" class="pff-btn-outline">Visit Our Website</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <div class="pff-footer">
+    <p>© 2026 Perfectly Flawed Families · <a href="https://perfectlyflawedleadership.com/">perfectlyflawedleadership.com</a></p>
+  </div>
+
+</div>

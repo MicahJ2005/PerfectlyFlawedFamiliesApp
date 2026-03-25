@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://perfectlyflawedfamilies.web.app/sitemap.xml
