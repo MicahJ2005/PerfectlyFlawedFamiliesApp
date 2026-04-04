@@ -16,8 +16,9 @@ export function AdvisorScreen({ user }) {
   const [result,     setResult]     = useState(null);
   const [loading,    setLoading]    = useState(false);
   const [history,    setHistory]    = useState([]);
-  const [activeTab,  setActiveTab]  = useState("advice");
-  const [error,      setError]      = useState(null);
+  const [activeTab,    setActiveTab]    = useState("advice");
+  const [error,        setError]        = useState(null);
+  const [visibleCount, setVisibleCount] = useState(10);
 
   useEffect(() => {
     if (!user) return;
@@ -69,17 +70,27 @@ export function AdvisorScreen({ user }) {
       {activeTab === "history" ? (
         history.length === 0
           ? <p style={{ fontFamily:"Georgia,serif", fontSize:14, color:LTGREY, fontStyle:"italic", textAlign:"center", padding:"60px 0" }}>Your past Family Roots sessions will appear here.</p>
-          : history.map((h, i) => (
-            <div key={i} onClick={() => { setResult(h); setStep("result"); }} style={{ ...css.card, cursor:"pointer", display:"flex", alignItems:"flex-start", gap:10, marginBottom:12 }}>
-              <span style={{ fontSize:20 }}>{h.situation?.icon}</span>
-              <div style={{ flex:1 }}>
-                <p style={{ fontFamily:"Georgia,serif", fontSize:14, fontWeight:700, color:CHARCOAL, margin:"0 0 2px" }}>{h.situation?.label}</p>
-                <p style={{ fontFamily:"Georgia,serif", fontSize:11, color:LTGREY, margin:"0 0 4px" }}>{h.timestamp}</p>
-                <p style={{ fontFamily:"Georgia,serif", fontSize:12, fontStyle:"italic", color:MIDGREY, margin:0 }}>"{h.headline}"</p>
+          : <>
+            {history.slice(0, visibleCount).map((h, i) => (
+              <div key={i} onClick={() => { setResult(h); setStep("result"); }} style={{ ...css.card, cursor:"pointer", display:"flex", alignItems:"flex-start", gap:10, marginBottom:12 }}>
+                <span style={{ fontSize:20 }}>{h.situation?.icon}</span>
+                <div style={{ flex:1 }}>
+                  <p style={{ fontFamily:"Georgia,serif", fontSize:14, fontWeight:700, color:CHARCOAL, margin:"0 0 2px" }}>{h.situation?.label}</p>
+                  <p style={{ fontFamily:"Georgia,serif", fontSize:11, color:LTGREY, margin:"0 0 4px" }}>{h.timestamp}</p>
+                  <p style={{ fontFamily:"Georgia,serif", fontSize:12, fontStyle:"italic", color:MIDGREY, margin:0 }}>"{h.headline}"</p>
+                </div>
+                <span style={{ color:TEAL, fontSize:18 }}>›</span>
               </div>
-              <span style={{ color:TEAL, fontSize:18 }}>›</span>
-            </div>
-          ))
+            ))}
+            {history.length > visibleCount && (
+              <button
+                onClick={() => setVisibleCount(c => c + 10)}
+                style={{ display:"block", width:"100%", background:"transparent", border:`1.5px solid rgba(46,125,107,0.3)`, borderRadius:12, padding:"12px 0", fontFamily:"Georgia,serif", fontSize:13, fontWeight:600, color:TEAL, cursor:"pointer", marginBottom:16 }}
+              >
+                Load More ({history.length - visibleCount} remaining)
+              </button>
+            )}
+          </>
       ) : (
         <>
           <div style={css.darkCard}>

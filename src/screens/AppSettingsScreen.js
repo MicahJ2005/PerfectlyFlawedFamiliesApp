@@ -60,7 +60,7 @@ export function AppSettingsScreen({ onBack }) {
       <p style={{ fontFamily:"Georgia,serif", fontSize:11, fontWeight:600, color:MIDGREY, letterSpacing:"0.12em", textTransform:"uppercase", margin:"8px 0 10px" }}>Support</p>
       <div style={{ background:"rgba(255,255,255,0.82)", borderRadius:14, border:"1px solid rgba(46,125,107,0.18)", overflow:"hidden", marginBottom:12 }}>
         <a
-          href="https://perfectlyflawed.com"
+          href="https://perfectlyflawedleadership.com"
           target="_blank"
           rel="noopener noreferrer"
           style={{ display:"flex", alignItems:"center", gap:14, padding:"18px 18px", textDecoration:"none" }}
@@ -68,20 +68,20 @@ export function AppSettingsScreen({ onBack }) {
           <span style={{ fontSize:22 }}>🌐</span>
           <div style={{ flex:1 }}>
             <p style={{ fontFamily:"Georgia,serif", fontSize:14, fontWeight:600, color:CHARCOAL, margin:"0 0 2px" }}>Visit Our Website</p>
-            <p style={{ fontFamily:"Georgia,serif", fontSize:11, color:LTGREY, margin:0 }}>perfectlyflawed.com</p>
+            <p style={{ fontFamily:"Georgia,serif", fontSize:11, color:LTGREY, margin:0 }}>perfectlyflawedleadership.com</p>
           </div>
           <span style={{ color:LTGREY, fontSize:16 }}>›</span>
         </a>
       </div>
       <div style={{ background:"rgba(255,255,255,0.82)", borderRadius:14, border:"1px solid rgba(46,125,107,0.18)", overflow:"hidden", marginBottom:24 }}>
         <a
-          href="mailto:support@perfectlyflawed.com"
+          href="mailto:perfectlyflawedleadership@gmail.com"
           style={{ display:"flex", alignItems:"center", gap:14, padding:"18px 18px", textDecoration:"none" }}
         >
           <span style={{ fontSize:22 }}>✉️</span>
           <div style={{ flex:1 }}>
             <p style={{ fontFamily:"Georgia,serif", fontSize:14, fontWeight:600, color:CHARCOAL, margin:"0 0 2px" }}>Contact Support</p>
-            <p style={{ fontFamily:"Georgia,serif", fontSize:11, color:LTGREY, margin:0 }}>support@perfectlyflawed.com</p>
+            <p style={{ fontFamily:"Georgia,serif", fontSize:11, color:LTGREY, margin:0 }}>perfectlyflawedleadership@gmail.com</p>
           </div>
           <span style={{ color:LTGREY, fontSize:16 }}>›</span>
         </a>

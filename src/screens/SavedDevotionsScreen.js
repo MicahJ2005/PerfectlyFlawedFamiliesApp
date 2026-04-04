@@ -18,7 +18,7 @@ export function shareDevotion(devotion) {
     (devotion.analogy ? `A Picture of This:\n${devotion.analogy}\n\n` : "") +
     `Reflect:\n${devotion.reflection}\n\n` +
     `Closing Prayer:\n${devotion.prayer}\n\n` +
-    `— Shared from Perfectly Flawed Families\nhttps://perfectlyflawed.com\nhttps://perfectly-flawed-families.web.app`
+    `— Shared from Perfectly Flawed Families\nhttps://perfectlyflawedleadership.com\nhttps://perfectlyflawedfamilies.web.app`
   );
   window.location.href = `mailto:?subject=${subject}&body=${body}`;
 }
@@ -86,11 +86,14 @@ export function DevotionDetail({ devotion, onBack }) {
   );
 }
 
+const PAGE_SIZE = 10;
+
 export function SavedDevotionsScreen({ user, onBack }) {
-  const [devotions, setDevotions] = useState([]);
-  const [loading,   setLoading]   = useState(true);
-  const [selected,  setSelected]  = useState(null);
-  const [confirmId, setConfirmId] = useState(null);
+  const [devotions,    setDevotions]    = useState([]);
+  const [loading,      setLoading]      = useState(true);
+  const [selected,     setSelected]     = useState(null);
+  const [confirmId,    setConfirmId]    = useState(null);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   useEffect(() => {
     DB.getSavedDevotions(user.uid)
@@ -130,7 +133,7 @@ export function SavedDevotionsScreen({ user, onBack }) {
         </div>
       )}
 
-      {devotions.map(d => (
+      {devotions.slice(0, visibleCount).map(d => (
         <div
           key={d.id}
           onClick={() => setSelected(d)}
@@ -158,6 +161,15 @@ export function SavedDevotionsScreen({ user, onBack }) {
           </div>
         </div>
       ))}
+
+      {devotions.length > visibleCount && (
+        <button
+          onClick={() => setVisibleCount(c => c + PAGE_SIZE)}
+          style={{ display:"block", width:"100%", background:"transparent", border:`1.5px solid rgba(46,125,107,0.3)`, borderRadius:12, padding:"12px 0", fontFamily:"Georgia,serif", fontSize:13, fontWeight:600, color:TEAL, cursor:"pointer", marginTop:4 }}
+        >
+          Load More ({devotions.length - visibleCount} remaining)
+        </button>
+      )}
     </div>
   );
 }

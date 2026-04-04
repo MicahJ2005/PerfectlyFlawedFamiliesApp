@@ -23,7 +23,7 @@ const SECTIONS = [
     icon: "📋",
     title: "General Disclaimer",
     body:
-      "Perfectly Flawed Families provides this app and its content \"as is\" without warranties of any kind. We make no guarantees regarding the completeness, accuracy, or suitability of any content for your specific family situation.\n\nThe guidance offered through this app — including devotions and family roots sessions — is grounded in Scripture and intended to supplement, not replace, your personal discernment, pastoral relationships, and professional advisors.\n\nFor questions about these terms or our community standards, please contact us at support@perfectlyflawed.com.",
+      "Perfectly Flawed Families provides this app and its content \"as is\" without warranties of any kind. We make no guarantees regarding the completeness, accuracy, or suitability of any content for your specific family situation.\n\nThe guidance offered through this app — including devotions and family roots sessions — is grounded in Scripture and intended to supplement, not replace, your personal discernment, pastoral relationships, and professional advisors.\n\nFor questions about these terms or our community standards, please contact us at perfectlyflawedleadership@gmail.com.",
   },
 ];
 
@@ -81,10 +81,10 @@ export function DisclaimerScreen({ onBack }) {
           Questions about these policies?
         </p>
         <a
-          href="mailto:support@perfectlyflawed.com"
+          href="mailto:perfectlyflawedleadership@gmail.com"
           style={{ fontFamily: "Georgia,serif", fontSize: 13, color: TEAL, fontWeight: 600, textDecoration: "none" }}
         >
-          support@perfectlyflawed.com
+          perfectlyflawedleadership@gmail.com
         </a>
       </div>
 

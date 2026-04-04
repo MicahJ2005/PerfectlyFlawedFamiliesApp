@@ -1,9 +1,9 @@
 // ── Family Devotion Topics ────────────────────────────────────────────────────
 export const TOPICS = [
-  // Marriage & Partnership
+  // Marriage
   "Loving your spouse unconditionally", "Communication in marriage", "Conflict resolution in marriage",
   "Keeping romance alive", "Forgiveness in marriage", "Spiritual intimacy with your spouse",
-  "When marriage feels hard", "Building trust after hurt", "Serving your partner sacrificially",
+  "When marriage feels hard", "Building trust after hurt", "Serving your spouse sacrificially",
   "Praying together as a couple",
 
   // Parenting
@@ -56,13 +56,13 @@ export const AGE_RANGES = [
 // ── Devotion Topic Categories ─────────────────────────────────────────────────
 export const TOPIC_CATEGORIES = [
   {
-    label: "Marriage & Partnership",
+    label: "Marriage",
     topics: [
       "Loving your spouse unconditionally", "Communication in marriage",
       "Conflict resolution in marriage", "Keeping romance alive",
       "Forgiveness in marriage", "Spiritual intimacy with your spouse",
       "When marriage feels hard", "Building trust after hurt",
-      "Serving your partner sacrificially", "Praying together as a couple",
+      "Serving your spouse sacrificially", "Praying together as a couple",
     ],
   },
   {
@@ -135,7 +135,7 @@ export const CHILD_INTEREST_ANGLES = [
 // ── Family Roots Situations ───────────────────────────────────────────────────
 export const SITUATIONS = [
   { icon:"💬", label:"Marriage Communication",    desc:"Struggling to connect or communicate with your spouse" },
-  { icon:"👪", label:"Parenting Disagreements",   desc:"You and your partner disagree on how to parent" },
+  { icon:"👪", label:"Parenting Disagreements",   desc:"You and your spouse disagree on how to parent" },
   { icon:"🤝", label:"Sibling Conflict",           desc:"Children fighting or struggling to get along" },
   { icon:"🏡", label:"In-Law Boundaries",          desc:"Navigating difficult extended family relationships" },
   { icon:"🌱", label:"Blended Family Challenges",  desc:"Integrating step-children or co-parenting situations" },
@@ -148,8 +148,8 @@ export const SITUATIONS = [
 
 // ── Family Roles ──────────────────────────────────────────────────────────────
 export const FAMILY_ROLES = [
-  { id:"parent",        label:"Parent",            sub:"Primary caregiver and guide"                    },
-  { id:"spouse",        label:"Spouse / Partner",  sub:"Navigating marriage and partnership"            },
+  { id:"parent",        label:"Parent",             sub:"Primary caregiver and guide"                    },
+  { id:"spouse",        label:"Spouse",             sub:"Navigating marriage"            },
   { id:"adult_child",   label:"Adult Child",        sub:"Managing family relationships as a grown child" },
   { id:"single_parent", label:"Single Parent",      sub:"Leading a family on your own"                  },
 ];

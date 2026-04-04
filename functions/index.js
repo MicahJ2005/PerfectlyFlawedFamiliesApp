@@ -55,7 +55,7 @@ function stripe() {
 function webpush() {
   const wp = require("web-push");
   wp.setVapidDetails(
-    "mailto:support@perfectlyflawedfamilies.com",
+    "mailto:perfectlyflawedleadership@gmail.com",
     process.env.VAPID_PUBLIC_KEY,
     process.env.VAPID_PRIVATE_KEY,
   );
@@ -146,13 +146,14 @@ exports.createCheckoutSession = onRequest(async (req, res) => {
     }
 
     const session = await s.checkout.sessions.create({
-      customer:             customerId,
-      payment_method_types: ["card"],
-      line_items:           [{ price: priceId, quantity: 1 }],
-      mode:                 "subscription",
-      success_url:          `${process.env.APP_URL}/?payment=success`,
-      cancel_url:           `${process.env.APP_URL}/?payment=cancelled`,
-      metadata:             { firebaseUid: uid },
+      customer:               customerId,
+      payment_method_types:   ["card"],
+      line_items:             [{ price: priceId, quantity: 1 }],
+      mode:                   "subscription",
+      allow_promotion_codes:  true,
+      success_url:            `${process.env.APP_URL}/?payment=success`,
+      cancel_url:             `${process.env.APP_URL}/?payment=cancelled`,
+      metadata:               { firebaseUid: uid },
     });
 
     res.json({ url: session.url });

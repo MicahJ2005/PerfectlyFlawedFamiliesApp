@@ -13,6 +13,7 @@ function GroupPrayerWall({ group, user, onBack }) {
   const [isAnon,        setIsAnon]        = useState(false);
   const [submitted,     setSubmitted]     = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(null);
+  const [visibleCount,  setVisibleCount]  = useState(10);
 
   useEffect(() => {
     const unsub = DB.subscribeToPrivateGroupPrayers(group.id, setPrayers);
@@ -96,7 +97,7 @@ function GroupPrayerWall({ group, user, onBack }) {
         {prayers.length === 0 && (
           <p style={{ fontFamily:"Georgia,serif", fontSize:14, color:LTGREY, fontStyle:"italic", textAlign:"center", paddingTop:60 }}>No prayer requests yet. Be the first to share.</p>
         )}
-        {prayers.map(prayer => {
+        {prayers.slice(0, visibleCount).map(prayer => {
           const hasPrayed    = (prayer.prayedBy || []).includes(user.uid);
           const isOwner      = prayer.uid === user.uid;
           const isConfirming = confirmDelete === prayer.id;
@@ -122,14 +123,30 @@ function GroupPrayerWall({ group, user, onBack }) {
                   <button onClick={() => setConfirmDelete(null)} style={{ background:"transparent", border:`1px solid ${MIDGREY}`, borderRadius:14, padding:"5px 12px", fontFamily:"Georgia,serif", fontSize:12, color:MIDGREY, cursor:"pointer" }}>Keep</button>
                 </div>
               ) : (
-                <button onClick={() => toggleHeart(prayer)} style={{ background: hasPrayed ? "rgba(46,125,107,0.1)" : "transparent", border:`1px solid ${hasPrayed ? TEAL : "rgba(46,125,107,0.25)"}`, borderRadius:20, padding:"6px 12px", cursor:"pointer", display:"flex", alignItems:"center", gap:6 }}>
-                  <HeartIcon filled={hasPrayed} size={14} color={TEAL}/>
-                  <span style={{ fontFamily:"Georgia,serif", fontSize:12, fontWeight:600, color:TEAL }}>{hasPrayed ? "Prayed" : "I prayed"} · {prayer.hearts || 0}</span>
-                </button>
+                <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginTop:4 }}>
+                  <button onClick={() => toggleHeart(prayer)} style={{ background: hasPrayed ? TEAL : "transparent", border:`2px solid ${TEAL}`, borderRadius:22, padding:"8px 18px", cursor:"pointer", display:"flex", alignItems:"center", gap:8 }}>
+                    <HeartIcon filled={hasPrayed} size={17} color={hasPrayed ? WHITE : TEAL}/>
+                    <span style={{ fontFamily:"Georgia,serif", fontSize:14, fontWeight:700, color: hasPrayed ? WHITE : TEAL }}>{hasPrayed ? "Pray again" : "I prayed"}</span>
+                  </button>
+                  <div style={{ display:"flex", alignItems:"center", gap:6, background:"rgba(46,125,107,0.08)", border:"1px solid rgba(46,125,107,0.2)", borderRadius:16, padding:"6px 12px" }}>
+                    <span style={{ fontSize:15 }}>🙏</span>
+                    <span style={{ fontFamily:"Georgia,serif", fontSize:15, fontWeight:700, color:TEAL }}>{prayer.hearts || 0}</span>
+                    <span style={{ fontFamily:"Georgia,serif", fontSize:12, color:MIDGREY }}>prayed</span>
+                  </div>
+                </div>
               )}
             </div>
           );
         })}
+
+        {prayers.length > visibleCount && (
+          <button
+            onClick={() => setVisibleCount(c => c + 10)}
+            style={{ display:"block", width:"100%", background:"transparent", border:`1.5px solid rgba(46,125,107,0.3)`, borderRadius:12, padding:"12px 0", fontFamily:"Georgia,serif", fontSize:13, fontWeight:600, color:TEAL, cursor:"pointer", marginBottom:16 }}
+          >
+            Load More ({prayers.length - visibleCount} remaining)
+          </button>
+        )}
       </div>
 
       {/* Submit prayer modal */}

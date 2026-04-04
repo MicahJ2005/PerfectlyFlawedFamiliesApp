@@ -17,6 +17,7 @@ export function PrayerScreen({ user }) {
   const [submitted,           setSubmitted]           = useState(false);
   const [confirmDelete,       setConfirmDelete]       = useState(null);
   const [userGroups,          setUserGroups]          = useState([]);
+  const [visibleCount,        setVisibleCount]        = useState(10);
   const privateUnsubRef = useRef(null);
 
   // Public prayers + user profile
@@ -41,8 +42,8 @@ export function PrayerScreen({ user }) {
     return () => { if (privateUnsubRef.current) privateUnsubRef.current(); };
   }, [activePrivate?.id]);
 
-  const selectPublicTab  = (g)     => { setActiveGroup(g); setActivePrivate(null); };
-  const selectPrivateTab = (group) => { setActivePrivate(group); setActiveGroup(null); };
+  const selectPublicTab  = (g)     => { setActiveGroup(g); setActivePrivate(null); setVisibleCount(10); };
+  const selectPrivateTab = (group) => { setActivePrivate(group); setActiveGroup(null); setVisibleCount(10); };
 
   const visibleGroups = userGroups.length > 0 ? userGroups : GROUPS;
   const TEN_DAYS_MS   = 10 * 24 * 60 * 60 * 1000;
@@ -144,7 +145,7 @@ export function PrayerScreen({ user }) {
         {displayPrayers.length === 0 && (
           <p style={{ fontFamily:"Georgia,serif", fontSize:14, color:LTGREY, fontStyle:"italic", textAlign:"center", paddingTop:60 }}>No prayer requests yet. Be the first to share.</p>
         )}
-        {displayPrayers.map(prayer => {
+        {displayPrayers.slice(0, visibleCount).map(prayer => {
           const hasPrayed    = (prayer.prayedBy || []).includes(user?.uid);
           const isOwner      = user?.uid && prayer.uid === user.uid;
           const isConfirming = confirmDelete === prayer.id;
@@ -186,6 +187,15 @@ export function PrayerScreen({ user }) {
             </div>
           );
         })}
+
+        {displayPrayers.length > visibleCount && (
+          <button
+            onClick={() => setVisibleCount(c => c + 10)}
+            style={{ display:"block", width:"100%", background:"transparent", border:`1.5px solid rgba(46,125,107,0.3)`, borderRadius:12, padding:"12px 0", fontFamily:"Georgia,serif", fontSize:13, fontWeight:600, color:TEAL, cursor:"pointer", marginBottom:16 }}
+          >
+            Load More ({displayPrayers.length - visibleCount} remaining)
+          </button>
+        )}
       </div>
 
       {/* Submit prayer modal */}

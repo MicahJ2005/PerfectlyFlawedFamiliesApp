@@ -179,10 +179,10 @@ export function HelpScreen({ onBack }) {
         <p style={{ fontFamily: "Georgia,serif", fontSize: 13, color: MIDGREY, lineHeight: 1.75, margin: 0 }}>
           Still have questions? Reach us at{" "}
           <a
-            href="mailto:support@perfectlyflawed.com"
+            href="mailto:perfectlyflawedleadership@gmail.com"
             style={{ color: TEAL, textDecoration: "none", fontWeight: 600 }}
           >
-            support@perfectlyflawed.com
+            perfectlyflawedleadership@gmail.com
           </a>
         </p>
       </div>
