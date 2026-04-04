@@ -18,6 +18,9 @@ functions/.env.local
 # Firebase cache
 .firebase/
 
+# Salesforce DX
+.sfdx/
+
 # OS / editor
 .DS_Store
 .vscode/
